@@ -7,3 +7,13 @@
 meteor-platform
 autopublish
 insecure
+less
+email
+http
+fastclick
+accounts-twitter
+launch-screen
+iron:router
+percolate:velocityjs
+underscore
+simple:reactive-method
