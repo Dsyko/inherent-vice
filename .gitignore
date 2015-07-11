@@ -1,0 +1,15 @@
+*.sublime-workspace
+
+npm-debug.log
+node_modules
+
+.vagrant
+.DS_Store
+/**/.DS_Store
+
+.idea/
+
+*~
+#*#
+
+.tern*
