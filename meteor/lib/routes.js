@@ -28,13 +28,46 @@ HomeController = RouteController.extend({
 	}
 });
 
+PaymentController = RouteController.extend({
+	onBeforeAction: function() {
+		if (Meteor.user()){
+			//Meteor.subscribe('bookmarks');
+		}else{
+			Overlay.open('authOverlay');
+		}
+		this.next();
+	},
+	data: function() {
+		if (Meteor.user())
+			return {data: 'here'};
+	}
+});
+
+
+ViceController = RouteController.extend({
+	onBeforeAction: function() {
+		//Meteor.subscribe('vices', this.params.name);
+		this.next();
+	},
+	data: function() {
+		return VicesData[this.params.name];
+	}
+});
+
+VicesController = RouteController.extend({
+	data: function() {
+		return _.values(VicesData);
+	}
+});
+
 Router.map(function() {
 	this.route('home', {path: '/'});
+	this.route('vices');
+	this.route('vice', {path: '/vices/:name'});
 	this.route('feed');
 	this.route('recipes');
-	this.route('bookmarks');
+	this.route('payment');
 	this.route('about');
-	this.route('recipe', {path: '/recipes/:name'});
 });
 
 Router.onBeforeAction('dataNotFound', {only: 'recipe'});

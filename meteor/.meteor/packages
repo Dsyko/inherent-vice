@@ -11,9 +11,12 @@ email
 http
 fastclick
 accounts-twitter
+service-configuration
+oauth1
 launch-screen
 iron:router
 percolate:velocityjs
 underscore
 simple:reactive-method
 twbs:bootstrap
+fortawesome:fontawesome
