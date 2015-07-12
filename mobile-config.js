@@ -1,12 +1,4 @@
-App.info({
-	id: 'com.inherent.vice',
-  name: 'Inherent Vice',
-  description: 'A habit curbing app built in meteor',
-  author: 'Merrick Clark and David Sykora',
-  email: 'us@example.com	',
-  website: 'https://github.com/Dsyko/inherent-vice',
-  version: '0.0.1'
-});
+
 
 App.icons({
   // iOS
