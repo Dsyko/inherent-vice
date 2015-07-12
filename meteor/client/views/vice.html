@@ -9,9 +9,7 @@
 	<div class="attribution-recipe js-uncollapse">
 		<h1 class="title-recipe">{{title}}</h1>
 		<div class="metadata-wrapper">
-			<p class="description-recipe">{{excerpt}}</p>
-			<span class="source">{{source.name}}</span>
-			<span class="time">{{cookTime}}</span>
+			<p class="description-recipe">{{description}}</p>
 		</div>
 
 		<div class="btns-group">
@@ -25,6 +23,7 @@
 	<!--<a class="btn-tertiary js-share"><i class="fa fa-clock-o"></i> Choose a time-frame</a>-->
 	{{#if committed}}
 		<span class="title-callout"><i class="fa fa-clock-o"></i> Current time frame</span>
+		<!--<div class="list-subtitle"> {{description}}</div>-->
 		<div class="list-subtitle"> You are going to avoid {{synonym}} for:</div>
 		<div class="time-frame-countdown">
 			Your commitment expires {{timeleft}}
@@ -32,6 +31,7 @@
 	{{else}}
 		<span class="title-callout"><i class="fa fa-clock-o"></i> Choose a time frame</span>
 		<div class="list-subtitle"> Select how long you will avoid {{synonym}}</div>
+		<!--<div class="list-subtitle"> {{description}}</div>-->
 		<div class="time-frame-button" data-action="select-time" data-time="day">
 			1 Day
 		</div>
@@ -49,12 +49,18 @@
 	{{/if}}
 	</div>
 
-		<div class="content-scrollable static-nav feed-scrollable">
+		<div class="content-scrollable static-nav feed-scrollable text-center">
 			<!--<a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>-->
 			<span class="title-callout"><i class="fa fa-money"></i> Choose a Charity</span>
 			<div class="list-subtitle"> Select which charity to donate to when you indulge</div>
-			<div class="charity-button" data-action="select-charity" data-charity="week">
-				Charity Name Here, IMage background too....
+			<div class="charity-button {{#if isSelectedCharity "dnc"}}selected{{/if}}" data-action="select-charity" data-charity="dnc">
+				<img src="/img/app/rnc.jpg" alt="Democrats"/>
+			</div>
+			<div class="charity-button {{#if isSelectedCharity "gop"}}selected{{/if}}" data-action="select-charity" data-charity="gop">
+				<img src="/img/app/gop.jpg" alt="Republicans"/>
+			</div>
+			<div class="charity-button {{#if isSelectedCharity "trump"}}selected{{/if}}" data-action="select-charity" data-charity="trump">
+				<img src="/img/app/trump.jpg" alt="Trump"/>
 			</div>
 		</div>
 	</div>

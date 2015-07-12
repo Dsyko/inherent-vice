@@ -1,12 +1,13 @@
 <template name="payment">
   <div class="page payment">
-    {{> nav title='Your Payment Settings' subtext=recipeCount}}
+    {{> nav title='Your Account Settings' subtext=recipeCount}}
 
     <div class="content-scrollable">
-      <div class="list-recipes">
+      <div class="list-recipes text-center">
         {{#if userIsLoggedIn}}
-          Yay Logged in!!
-			Braintree payment info here....
+			{{>braintreeForm}}
+			<br/>
+			<a href="#" class="btn-primary js-open" data-action="logout">Log Out</a>
         {{else}}
           <div class="wrapper-message">
             <div class="title-message">No payments yet</div>
@@ -17,3 +18,21 @@
     </div>
   </div>
 </template>
+
+<template name="creditCardForm">
+	<div class='card-wrapper'></div>
+	<form>
+		<input type="text" id="CardNumber" name="number" placeholder="Card Number">
+		<input type="text" id="CardName" name="name" placeholder="Full Name"/>
+		<input type="text" id="CardExpiry" name="expiry"  placeholder="Expiration Date"/>
+		<input type="text" id="CardCvc" name="cvc"  placeholder="Security Code"/>
+	</form>
+</template>
+
+<template name="braintreeForm">
+	<form class="text-center" id="checkout" method="post" action="/payment">
+		<div id="payment-form"></div>
+		<input type="submit" value="Pay $5">
+	</form>
+</template>
+

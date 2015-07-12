@@ -21,3 +21,7 @@ simple:reactive-method
 twbs:bootstrap
 fortawesome:fontawesome
 momentjs:moment
+meteorhacks:npm
+
+
+npm-container

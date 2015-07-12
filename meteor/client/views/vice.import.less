@@ -249,9 +249,40 @@
 	margin-bottom: 10px;
 	cursor: pointer;
 	font-size: 18px;
+
+	-moz-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
 	//background-color: grey;
 	.crossbrowserTransparentBackground(#555555, 0.5);
 	&.selected{
 		.crossbrowserTransparentBackground(#57B7D2, 0.9);
+	}
+}
+
+.charity-button{
+	display: inline-block;
+	padding: 10px;
+	width: 60%;
+	margin-bottom: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	img {
+		display: block;
+		height: auto;
+		width: 100%;
+		//border-radius: 10px;
+	}
+	-moz-transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+	&:not(.selected){
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		filter: gray;
+		filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/s….3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+
 	}
 }

@@ -63,6 +63,10 @@ Template.vice.helpers({
 	timeleft: function() {
 		var currentData = Template.currentData();
 		return moment(currentData.expireTime).fromNow();
+	},
+	isSelectedCharity: function(charity) {
+		var currentData = Template.currentData();
+		return currentData && currentData.selectedCharity === charity;
 	}
 });
 
@@ -120,7 +124,19 @@ Template.vice.events({
 		//console.log("selected time: ", expireTime);
 	},
 	'click div[data-action="select-charity"]': function(event, template) {
+		event.preventDefault();
+		event.stopPropagation();
+
 		template.$('div[data-action="select-charity"]').removeClass('selected');
 		$(event.currentTarget).addClass('selected');
+		var selectedCharity = $(event.currentTarget).data('charity');
+		var vice = Template.currentData();
+		if(vice._id){
+			Vices.update({_id: vice._id}, {$set: {'selectedCharity': selectedCharity} });
+		}else{
+			if(Meteor.userId()){
+				Vices.insert(_.extend({userId: Meteor.userId(), 'selectedCharity': selectedCharity}, vice));
+			}
+		}
 	}
 });
