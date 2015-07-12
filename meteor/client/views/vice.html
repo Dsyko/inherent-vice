@@ -27,25 +27,25 @@
 		<span class="title-callout"><i class="fa fa-clock-o"></i> Current time frame</span>
 		<div class="list-subtitle"> You are going to avoid {{synonym}} for:</div>
 		<div class="time-frame-countdown">
-			{{timeleft}}
+			Commitment expires {{timeleft}}
 		</div>
 	{{else}}
 		<span class="title-callout"><i class="fa fa-clock-o"></i> Choose a time frame</span>
 		<div class="list-subtitle"> Select how long you will avoid {{synonym}}</div>
-		<div class="time-frame-button">
+		<div class="time-frame-button" data-action="select-time" data-time="day">
 			1 Day
 		</div>
-		<div class="time-frame-button">
+		<div class="time-frame-button" data-action="select-time" data-time="week">
 			1 Week
 		</div>
-		<div class="time-frame-button">
+		<div class="time-frame-button" data-action="select-time"  data-time="month">
 			1 Month
 		</div>
-		<div class="time-frame-button">
+		<div class="time-frame-button" data-action="select-time" data-time="year">
 			1 Year
 		</div>
 		<br/>
-		<a href="#" class="btn-primary js-open">Commit</a>
+		<a href="#" class="btn-primary" data-action="commit-to-time">Commit</a>
 	{{/if}}
 	</div>
 

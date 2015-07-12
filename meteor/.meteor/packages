@@ -20,3 +20,4 @@ underscore
 simple:reactive-method
 twbs:bootstrap
 fortawesome:fontawesome
+momentjs:moment

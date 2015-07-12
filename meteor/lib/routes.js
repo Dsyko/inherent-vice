@@ -5,7 +5,7 @@ dataReadyHold = null;
 
 // Global subscriptions
 if (Meteor.isClient) {
-	//Meteor.subscribe('news');
+	Meteor.subscribe('vices');
 }
 
 Router.configure({
@@ -59,7 +59,7 @@ ViceController = RouteController.extend({
 		this.next();
 	},
 	data: function() {
-		return VicesData[this.params.name];
+		return Vices.findOne({name: this.params.name}) || VicesData[this.params.name];
 	}
 });
 

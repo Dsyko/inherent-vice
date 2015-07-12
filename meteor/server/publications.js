@@ -1,6 +1,6 @@
-Meteor.publish('systems', function () {
+Meteor.publish('vices', function () {
 	check(arguments, [Match.Any]);
 	if(this.userId) {
-		return Systems.find();
+		return Vices.find({userId: this.userId});
 	}
 });

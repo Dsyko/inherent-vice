@@ -1,7 +1,7 @@
 Meteor.startup(function () {
 
 	//Deny all database operations for users that are not logged in
-	Systems.deny({
+	Vices.deny({
 		insert: function(userId, doc){
 			return !userId;
 		},
@@ -13,7 +13,7 @@ Meteor.startup(function () {
 		}
 	});
 
-	Systems.allow({
+	Vices.allow({
 		insert: function(userId, doc){
 			return true;
 		},
