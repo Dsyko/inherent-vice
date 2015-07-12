@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<widget id="com.inherent.vice" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Inherent Vice</name>
-  <description>A habit curbing app built in meteor</description>
-  <author href="https://github.com/Dsyko/inherent-vice" email="us@example.com&#x9;">Merrick Clark and David Sykora</author>
+<widget id="com.id19xm3rj1otyh741abz633" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>inherent-vice</name>
+  <description>New Meteor Mobile App</description>
+  <author href="n/a" email="n/a">A Meteor Developer</author>
   <preference name="webviewbounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="AutoHideSplashScreen" value="false"/>
