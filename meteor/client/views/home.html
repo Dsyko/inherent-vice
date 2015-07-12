@@ -22,6 +22,16 @@
 
       <div class="list-subtitle">tap one below to get started</div>
 
+		{{#each vices}}
+			<div class="home-item-vice" data-action="open-vice">
+				<span class="home-item-vice-name">
+					{{name}}
+				</span>
+				<img src="{{imageSrc}}" alt="{{name}}"/>
+			</div>
+		{{else}}
+			Developer needs to add vices!
+		{{/each}}
     </div>
 
   </div>

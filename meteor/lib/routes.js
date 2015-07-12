@@ -63,7 +63,7 @@ VicesController = RouteController.extend({
 Router.map(function() {
 	this.route('home', {path: '/'});
 	this.route('vices');
-	this.route('vice', {path: '/vices/:name'});
+	this.route('vice', {path: '/vice/:name'});
 	this.route('feed');
 	this.route('recipes');
 	this.route('payment');
