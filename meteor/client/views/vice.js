@@ -54,8 +54,10 @@ Template.vice.helpers({
 		return false;
 	},
 	committed: function() {
-		Vices.find().fetch();
+		//console.log('committed helper run');
+		//Vices.find().fetch();
 		var currentData = Template.currentData();
+		console.log(currentData);
 		return _.isNumber((currentData && currentData.expireTime)) && (moment().valueOf() < currentData.expireTime);
 	},
 	timeleft: function() {
@@ -112,10 +114,13 @@ Template.vice.events({
 			Vices.update({_id: vice._id}, {$set: {'expireTime': expireTime} });
 		}else{
 			if(Meteor.userId()){
-				Vices.insert(_.extend(vice, {userId: Meteor.userId(), 'expireTime': expireTime}));
+				Vices.insert(_.extend({userId: Meteor.userId(), 'expireTime': expireTime}, vice));
 			}
 		}
-
-		console.log("selected time: ", expireTime);
+		//console.log("selected time: ", expireTime);
+	},
+	'click div[data-action="select-charity"]': function(event, template) {
+		template.$('div[data-action="select-charity"]').removeClass('selected');
+		$(event.currentTarget).addClass('selected');
 	}
 });
