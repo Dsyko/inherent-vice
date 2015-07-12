@@ -5,7 +5,13 @@
     <div class="content-scrollable">
       <div class="list-recipes text-center">
         {{#if userIsLoggedIn}}
-			{{>braintreeForm}}
+			{{#if paymentComplete}}
+				<div class="payment-confirm">
+					Thanks for your Donation! $5 has been sent to the charity of your choice.
+				</div>
+			{{else}}
+				{{>braintreeForm}}
+			{{/if}}
 			<br/>
 			<a href="#" class="btn-primary js-open" data-action="logout">Log Out</a>
         {{else}}
@@ -30,7 +36,7 @@
 </template>
 
 <template name="braintreeForm">
-	<form class="text-center" id="checkout" method="post" action="/payment">
+	<form class="text-center" id="checkout" method="post" action="/payment?complete=true">
 		<div id="payment-form"></div>
 		<input type="submit" value="Pay $5">
 	</form>
