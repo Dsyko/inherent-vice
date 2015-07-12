@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //App.info({
 //	id: 'com.inherent.vice',
 //  name: 'Inherent Vice',
@@ -8,9 +7,6 @@
 //  website: 'https://github.com/Dsyko/inherent-vice',
 //  version: '0.0.1'
 //});
-=======
-
->>>>>>> 4375742b38db6bbe7c438e67471872c1ed243457
 
 App.icons({
   // iOS
