@@ -24,6 +24,9 @@ HomeController = RouteController.extend({
 		//Meteor.subscribe('latestActivity', function() {
 		//	dataReadyHold.release();
 		//});
+		if(Meteor.isClient === true){
+			history.replaceState({initial: false}, null, location.href);
+		}
 		this.next();
 	}
 });
@@ -34,6 +37,9 @@ PaymentController = RouteController.extend({
 			//Meteor.subscribe('bookmarks');
 		}else{
 			Overlay.open('authOverlay');
+		}
+		if(Meteor.isClient === true){
+			history.replaceState({initial: false}, null, location.href);
 		}
 		this.next();
 	},
@@ -47,6 +53,9 @@ PaymentController = RouteController.extend({
 ViceController = RouteController.extend({
 	onBeforeAction: function() {
 		//Meteor.subscribe('vices', this.params.name);
+		if(Meteor.isClient === true){
+			history.replaceState({initial: false}, null, location.href);
+		}
 		this.next();
 	},
 	data: function() {
@@ -55,6 +64,13 @@ ViceController = RouteController.extend({
 });
 
 VicesController = RouteController.extend({
+	onBeforeAction: function() {
+		//Meteor.subscribe('vices', this.params.name);
+		if(Meteor.isClient === true){
+			history.replaceState({initial: false}, null, location.href);
+		}
+		this.next();
+	},
 	data: function() {
 		return _.values(VicesData);
 	}
