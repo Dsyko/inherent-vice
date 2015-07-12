@@ -1,32 +1,26 @@
-App.info({
-	id: 'com.inherent.vice',
-  name: 'Inherent Vice',
-  description: 'A habit curbing app built in meteor',
-  author: 'Merrick Clark and David Sykora',
-  email: 'us@example.com	',
-  website: 'https://github.com/Dsyko/inherent-vice',
-  version: '0.0.1'
-});
+//App.info({
+//	id: 'com.inherent.vice',
+//  name: 'Inherent Vice',
+//  description: 'A habit curbing app built in meteor',
+//  author: 'Merrick Clark and David Sykora',
+//  email: 'us@example.com	',
+//  website: 'https://github.com/Dsyko/inherent-vice',
+//  version: '0.0.1'
+//});
 
 App.icons({
   // iOS
-  'iphone': 'resources/icons/icon-60x60.png',
-  'iphone_2x': 'resources/icons/icon-60x60@2x.png',
-  'ipad': 'resources/icons/icon-72x72.png',
-  'ipad_2x': 'resources/icons/icon-72x72@2x.png',
-
-  // Android
-  'android_ldpi': 'resources/icons/icon-36x36.png',
-  'android_mdpi': 'resources/icons/icon-48x48.png',
-  'android_hdpi': 'resources/icons/icon-72x72.png',
-  'android_xhdpi': 'resources/icons/icon-96x96.png'
+  'iphone': 'resources/icons/icon-60.png',
+  'iphone_2x': 'resources/icons/icon-60@2x.png',
+  'ipad': 'resources/icons/icon-72.png',
+  'ipad_2x': 'resources/icons/icon-72@2x.png',
 });
 
 App.launchScreens({
   // iOS
-  'iphone': 'resources/splash/splash-320x480.png',
-  'iphone_2x': 'resources/splash/splash-320x480@2x.png',
-  'iphone5': 'resources/splash/splash-320x568@2x.png',
+  'iphone': 'resources/splash/Default~iphone.png',
+  'iphone_2x': 'resources/splash/Default@2x~iphone.png',
+  'iphone5': 'resources/splash/Default-568h@2x.png',
   'ipad_portrait': 'resources/splash/splash-768x1024.png',
   'ipad_portrait_2x': 'resources/splash/splash-768x1024@2x.png',
   'ipad_landscape': 'resources/splash/splash-1024x768.png',
