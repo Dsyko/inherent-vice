@@ -20,7 +20,7 @@ App.launchScreens({
   // iOS
   'iphone': 'resources/splash/Default~iphone.png',
   'iphone_2x': 'resources/splash/Default@2x~iphone.png',
-  'iphone5': 'resources/splash/Default-568h@2x.png',
+  'iphone5': 'resources/splash/Default-568h@2x~iphone.png',
   'ipad_portrait': 'resources/splash/Default-Portrait~ipad.png',
   'ipad_portrait_2x': 'resources/splash/Default-Portrait@2x~ipad.png',
   'ipad_landscape': 'resources/splash/Default-Landscape~ipad.png',
