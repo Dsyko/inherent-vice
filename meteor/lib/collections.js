@@ -1,3 +1,3 @@
 Users = Meteor.users;
-Systems = new Meteor.Collection("systems");
+Vices = new Meteor.Collection("vices");
 

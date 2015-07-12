@@ -1,0 +1,19 @@
+<template name="payment">
+  <div class="page payment">
+    {{> nav title='Your Payment Settings' subtext=recipeCount}}
+
+    <div class="content-scrollable">
+      <div class="list-recipes">
+        {{#if userIsLoggedIn}}
+          Yay Logged in!!
+			Braintree payment info here....
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No payments yet</div>
+            <div class="subtitle-message">Tap <i class="fa fa-credit-card"></i> to setup your payments. <a href="{{pathFor 'home'}}">Return home</a></div>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

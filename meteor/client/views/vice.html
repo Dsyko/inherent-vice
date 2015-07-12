@@ -1,0 +1,61 @@
+<template name="vice">
+
+<div class="page recipe {{activeTabClass}}">
+	{{#nav title='Vice' black=true back=true}}
+	{{/nav}}
+
+	<div class="image-recipe" style="background-image: url('/{{imageSrc}}')"></div>
+
+	<div class="attribution-recipe js-uncollapse">
+		<h1 class="title-recipe">{{title}}</h1>
+		<div class="metadata-wrapper">
+			<p class="description-recipe">{{excerpt}}</p>
+			<span class="source">{{source.name}}</span>
+			<span class="time">{{cookTime}}</span>
+		</div>
+
+		<div class="btns-group">
+			<a class="btn-secondary {{#if isActiveTab 'make'}}active{{/if}} {{#if isActiveTab 'recipe'}}no-state{{/if}} js-show-recipe">Time frame</a>
+			<a class="btn-secondary {{#if isActiveTab 'feed'}}active{{/if}} {{#if isActiveTab 'recipe'}}no-state{{/if}} js-show-feed">Donation</a>
+		</div>
+	</div>
+
+
+	<div class="content-scrollable static-nav make-scrollable text-center">
+	<!--<a class="btn-tertiary js-share"><i class="fa fa-clock-o"></i> Choose a time-frame</a>-->
+	{{#if committed}}
+		<span class="title-callout"><i class="fa fa-clock-o"></i> Current time frame</span>
+		<div class="list-subtitle"> You are going to avoid {{synonym}} for:</div>
+		<div class="time-frame-countdown">
+			Your commitment expires {{timeleft}}
+		</div>
+	{{else}}
+		<span class="title-callout"><i class="fa fa-clock-o"></i> Choose a time frame</span>
+		<div class="list-subtitle"> Select how long you will avoid {{synonym}}</div>
+		<div class="time-frame-button" data-action="select-time" data-time="day">
+			1 Day
+		</div>
+		<div class="time-frame-button" data-action="select-time" data-time="week">
+			1 Week
+		</div>
+		<div class="time-frame-button" data-action="select-time"  data-time="month">
+			1 Month
+		</div>
+		<div class="time-frame-button" data-action="select-time" data-time="year">
+			1 Year
+		</div>
+		<br/>
+		<a href="#" class="btn-primary" data-action="commit-to-time">Commit</a>
+	{{/if}}
+	</div>
+
+		<div class="content-scrollable static-nav feed-scrollable">
+			<!--<a class="btn-tertiary js-share"><span class="icon-camera"></span> Share that you made this</a>-->
+			<span class="title-callout"><i class="fa fa-money"></i> Choose a Charity</span>
+			<div class="list-subtitle"> Select which charity to donate to when you indulge</div>
+			<div class="charity-button" data-action="select-charity" data-charity="week">
+				Charity Name Here, IMage background too....
+			</div>
+		</div>
+	</div>
+	</template>

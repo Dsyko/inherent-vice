@@ -12,3 +12,8 @@ Handlebars.registerHelper('activePage', function() {
 	return _.include(routeNames, Router.current().route.name) && 'active';
 });
 
+deleteVices = function(){
+	Vices.find().forEach(function(vice){
+		Vices.remove({_id: vice._id});
+	})
+};
