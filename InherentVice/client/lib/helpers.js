@@ -1,7 +1,14 @@
 InherentVice = {
 	viceTrigger: function(vice){
-		console.log('Vice triggered: ', vice);
-		$('.hours').html(JSON.stringify(vice));
+		//console.log('Vice triggered: ', vice);
+		//$('.hours').html(JSON.stringify(vice));
+		setTimeout(function(){
+			Router.go('/payment');
+			setTimeout(function(){
+				$($.parseHTML('<div class="payment-confirm">You broke your commitment! Pay Up! </div>')).insertBefore('#checkout');
+			},1000);
+		},1500);
+
 	}
 };
 
